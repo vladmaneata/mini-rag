@@ -1,0 +1,42 @@
+{"question": "Where can I find the auto-generated interactive API docs for my FastAPI app once it is running locally, and does the path parameter type show up there?", "source_id": "tutorial/path-params.md#4"}
+{"question": "How can I stop FastAPI from sending exception details like stack traces to my OpenTelemetry logs?", "source_id": "advanced/opentelemetry.md#9"}
+{"question": "How can I securely store user passwords in a FastAPI app using a library that supports modern hashing algorithms, and check a login password against the stored hash?", "source_id": "tutorial/security/oauth2-jwt.md#6"}
+{"question": "In programming terms, what are the different meanings of the word 'program', such as the source files you write, the executable, and a running instance?", "source_id": "deployment/concepts.md#4"}
+{"question": "Why do programs call operations like network requests, disk reads, and database queries 'I/O bound'?", "source_id": "async.md#3"}
+{"question": "How can I make a FastAPI app store user passwords safely and issue signed tokens for login, instead of relying on plain-text credentials?", "source_id": "tutorial/security/oauth2-jwt.md#0"}
+{"question": "In a webhook setup, who is responsible for deciding the destination URL that requests get sent to, and how is it configured?", "source_id": "advanced/openapi-webhooks.md#1"}
+{"question": "How do I make a URL query parameter mandatory in FastAPI so that requests without it are rejected?", "source_id": "tutorial/query-params.md#5"}
+{"question": "Which Python library should I install to handle password hashing, and how do I add it with the Argon2 option using uv?", "source_id": "tutorial/security/oauth2-jwt.md#5"}
+{"question": "How can I have my route handler functions automatically receive reusable helper values or services that FastAPI sets up for them, so I don't have to repeat that setup logic in every endpoint?", "source_id": "tutorial/dependencies/index.md#1"}
+{"question": "How can I make a Pydantic model accept base64-encoded strings in incoming JSON and automatically convert them into raw bytes?", "source_id": "advanced/json-base64-bytes.md#2"}
+{"question": "Why does an editor flag a function's parameter as an error when I pass a number where a string is expected, even before running the code?", "source_id": "python-types.md#4"}
+{"question": "In my async test with FastAPI, can I call another async function directly with await, and what should I watch out for if I get a 'Task attached to a different loop' error?", "source_id": "advanced/async-tests.md#6"}
+{"question": "How can I write asynchronous tests for a FastAPI app that lives in a package with main.py and a test_main.py beside it?", "source_id": "advanced/async-tests.md#3"}
+{"question": "When my API sends a request out to another service that a different developer built, how can I document what that outside endpoint should accept and return?", "source_id": "advanced/openapi-callbacks.md#0"}
+{"question": "Which framework that used Python type hints for validation and docs did the author find right before creating FastAPI, and why did they stop using it?", "source_id": "alternatives.md#17"}
+{"question": "Before the async/await syntax existed in Python, what alternatives did developers use to handle concurrent or non-blocking work, and why were they considered harder to manage?", "source_id": "async.md#13"}
+{"question": "When a FastAPI endpoint takes a request body typed with a Pydantic model, what happens automatically to the incoming JSON before my function receives it?", "source_id": "tutorial/body.md#4"}
+{"question": "How can I group several HTTP request header values into one validated object in a FastAPI endpoint instead of declaring each header as a separate function argument?", "source_id": "tutorial/header-param-models.md#1"}
+{"question": "Why does the author recommend against using the Optional wrapper from the typing module in favor of an explicit union with None, even though both behave the same way?", "source_id": "advanced/advanced-python-types.md#1"}
+{"question": "In FastAPI, when a path operation function receives date or time-related parameters, can I directly do arithmetic on them such as adding a duration, or do I need to convert them first?", "source_id": "tutorial/extra-data-types.md#2"}
+{"question": "How do I run an existing Flask application alongside my FastAPI routes in the same server, mounted under a sub-path?", "source_id": "advanced/wsgi.md#1"}
+{"question": "How can I make my FastAPI endpoint reject unexpected query string keys that aren't declared in the query parameter model, returning an error instead of ignoring them?", "source_id": "tutorial/query-param-models.md#3"}
+{"question": "How can I confirm that FastAPI generates separate schemas for my request body model and my response model in the generated API docs?", "source_id": "tutorial/response-model.md#9"}
+{"question": "In a small Python script that joins a first and last name, converts each to capitalized form, and joins them with a space, what does the output look like when run?", "source_id": "python-types.md#1"}
+{"question": "Does FastAPI's main application class build on another framework's class, so that anything available there also works in FastAPI?", "source_id": "alternatives.md#19"}
+{"question": "Where can I find named constants for HTTP status codes instead of typing raw integers like 200 or 403 in my FastAPI app?", "source_id": "reference/status.md#0"}
+{"question": "How do I stop the framework from validating that the frontend build folder exists when my app object is created, because my frontend files get generated after that point?", "source_id": "tutorial/frontend.md#6"}
+{"question": "How do I containerize a FastAPI app that lives in just one Python file with no package folder, and what does the Dockerfile need to copy and run?", "source_id": "deployment/docker.md#18"}
+{"question": "How can I push a continuous feed of events from a FastAPI endpoint to a browser using the text/event-stream format?", "source_id": "tutorial/server-sent-events.md#0"}
+{"question": "How can I keep my application's configuration values in a separate Python file and import them into my main application file?", "source_id": "advanced/settings.md#7"}
+{"question": "Why would annotating a FastAPI path operation function's return type as the output model cause editor or type-checker complaints when the function actually returns a different model class?", "source_id": "tutorial/response-model.md#5"}
+{"question": "Are translations for the FastAPI docs still written by hand by community members, or is that done differently now?", "source_id": "fastapi-people.md#6"}
+{"question": "What is the common way to supply configuration like secret keys and database credentials to a Python web app so they stay outside the code?", "source_id": "advanced/settings.md#0"}
+{"question": "Why can't a Python web framework that uses a request-and-response parameter design automatically validate and document function parameters using standard type hints?", "source_id": "alternatives.md#14"}
+{"question": "How can I include event names or ids along with my data when streaming server-sent events from a FastAPI endpoint?", "source_id": "tutorial/server-sent-events.md#5"}
+{"question": "Where can I find a list of additional ASGI middleware options beyond the ones built into FastAPI?", "source_id": "advanced/middleware.md#6"}
+{"question": "Can I use a GraphQL library together with regular REST-style routes in the same FastAPI app?", "source_id": "how-to/graphql.md#0"}
+{"question": "How can I document the endpoints that a third-party service must implement so that my API can send it requests, using FastAPI's automatic docs?", "source_id": "advanced/openapi-callbacks.md#4"}
+{"question": "Which interactive browser-based interfaces does FastAPI provide out of the box for exploring and testing an API's endpoints?", "source_id": "features.md#2"}
+{"question": "How can I stop FastAPI from turning underscores in header parameter names into hyphens when using a Pydantic model for headers?", "source_id": "tutorial/header-param-models.md#4"}
+{"question": "What's the difference between a stored, non-running package of files and settings versus the live instance that gets executed from it, in the context of Docker-style deployments?", "source_id": "deployment/docker.md#2"}
