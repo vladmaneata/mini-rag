@@ -21,7 +21,7 @@ for question in eval_questions:
             "question": query,
             "Prediction": "missed"
         })
-    else:
+    elif source_id and source_id in id_set:
         results.append({
             "question": query,
             "Prediction": "found"
