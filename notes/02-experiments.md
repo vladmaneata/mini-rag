@@ -38,3 +38,17 @@ Rămânem fără stemming (varianta mai simplă).
 - Contează doar întrebările la care variantele nu sunt de acord.
 - Pentru comparații fine ne trebuie mai multe întrebări sau o metrică mai fină
   (poziția bucății corecte, MRR).
+
+# BM25 baseline
+
+## Setup
+- Corpus: 1183 de chunk-uri (fără release-notes.md)
+- Set de evaluare: 42 de întrebări generate cu LLM, o singură bucată relevantă pe întrebare
+- BM25: k1 = 1.5, b = 0.75, fără stemming
+- Rezultate căutate: primele 10
+
+## Rezultate
+| k | recall@k |
+|---|---|
+| 1 | 0.548 (23/42) |
+| 2
