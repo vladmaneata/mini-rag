@@ -1,0 +1,5 @@
+question,Prediction_plain,Prediction_stem
+"Where can I find the auto-generated interactive API docs for my FastAPI app once it is running locally, and does the path parameter type show up there?",found,missed
+How do I make a URL query parameter mandatory in FastAPI so that requests without it are rejected?,found,missed
+"Before the async/await syntax existed in Python, what alternatives did developers use to handle concurrent or non-blocking work, and why were they considered harder to manage?",missed,found
+"How can I make my FastAPI endpoint reject unexpected query string keys that aren't declared in the query parameter model, returning an error instead of ignoring them?",found,missed

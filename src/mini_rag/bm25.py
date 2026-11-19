@@ -2,24 +2,34 @@ import math
 import re
 from collections import Counter
 
+import snowballstemmer
+
+STEMMER = snowballstemmer.stemmer("english")
+
 
 def words(text: str) -> list[str]:
     return re.findall(r"\w+", text.lower())
+    
 
 
 class BM25:
-    def __init__(self, chunks: list[dict], k1: float = 1.5, b: float = 0.75):
+    def __init__(self, chunks: list[dict], k1: float = 1.5, b: float = 0.75, stem: bool = True):
         self.chunks = chunks
         self.k1 = k1
         self.b = b
-        self.tfs = [Counter(words(chunk["text"])) for chunk in chunks]
+        self.stem = stem
+        self.tfs = [Counter(self.toxenize(chunk["text"])) for chunk in chunks]
         self.lengths = [sum(tf.values()) for tf in self.tfs]
         self.avg_len = sum(self.lengths) / len(self.lengths)
         self.df = Counter()
         for tf in self.tfs:
             self.df.update(tf.keys())
         self.n = len(chunks)
-
+    def toxenize(self, text: str) -> list[str]:
+        tokens = words(text)
+        if self.stem:
+            tokens = [STEMMER.stemWord(token) for token in tokens]
+        return tokens
     def idf(self, word: str) -> float:
         return math.log((self.n - self.df[word] + 0.5) / (self.df[word] + 0.5) + 1)
 
@@ -41,7 +51,7 @@ class BM25:
         return score
 
     def search(self, query: str, k: int = 5) -> list[tuple[dict, float]]:
-        query_words = set(words(query))
+        query_words = set(self.toxenize(query))
         scores = [(self.chunks[i], self.score(query_words, i)) for i in range(self.n)]
         scores.sort(key=lambda x: x[1], reverse=True)
         return scores[:k]

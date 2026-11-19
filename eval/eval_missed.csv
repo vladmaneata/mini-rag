@@ -1,0 +1,12 @@
+question,Prediction
+"How can I make a FastAPI app store user passwords safely and issue signed tokens for login, instead of relying on plain-text credentials?",missed
+"How can I have my route handler functions automatically receive reusable helper values or services that FastAPI sets up for them, so I don't have to repeat that setup logic in every endpoint?",missed
+"Why does an editor flag a function's parameter as an error when I pass a number where a string is expected, even before running the code?",missed
+"Before the async/await syntax existed in Python, what alternatives did developers use to handle concurrent or non-blocking work, and why were they considered harder to manage?",missed
+"When a FastAPI endpoint takes a request body typed with a Pydantic model, what happens automatically to the incoming JSON before my function receives it?",missed
+How can I group several HTTP request header values into one validated object in a FastAPI endpoint instead of declaring each header as a separate function argument?,missed
+"In FastAPI, when a path operation function receives date or time-related parameters, can I directly do arithmetic on them such as adding a duration, or do I need to convert them first?",missed
+"How do I run an existing Flask application alongside my FastAPI routes in the same server, mounted under a sub-path?",missed
+How can I confirm that FastAPI generates separate schemas for my request body model and my response model in the generated API docs?,missed
+How can I keep my application's configuration values in a separate Python file and import them into my main application file?,missed
+How can I include event names or ids along with my data when streaming server-sent events from a FastAPI endpoint?,missed

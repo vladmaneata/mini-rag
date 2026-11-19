@@ -1,0 +1,43 @@
+question,Prediction
+"Where can I find the auto-generated interactive API docs for my FastAPI app once it is running locally, and does the path parameter type show up there?",found
+How can I stop FastAPI from sending exception details like stack traces to my OpenTelemetry logs?,found
+"How can I securely store user passwords in a FastAPI app using a library that supports modern hashing algorithms, and check a login password against the stored hash?",found
+"In programming terms, what are the different meanings of the word 'program', such as the source files you write, the executable, and a running instance?",found
+"Why do programs call operations like network requests, disk reads, and database queries 'I/O bound'?",found
+"How can I make a FastAPI app store user passwords safely and issue signed tokens for login, instead of relying on plain-text credentials?",missed
+"In a webhook setup, who is responsible for deciding the destination URL that requests get sent to, and how is it configured?",found
+How do I make a URL query parameter mandatory in FastAPI so that requests without it are rejected?,found
+"Which Python library should I install to handle password hashing, and how do I add it with the Argon2 option using uv?",found
+"How can I have my route handler functions automatically receive reusable helper values or services that FastAPI sets up for them, so I don't have to repeat that setup logic in every endpoint?",missed
+How can I make a Pydantic model accept base64-encoded strings in incoming JSON and automatically convert them into raw bytes?,found
+"Why does an editor flag a function's parameter as an error when I pass a number where a string is expected, even before running the code?",missed
+"In my async test with FastAPI, can I call another async function directly with await, and what should I watch out for if I get a 'Task attached to a different loop' error?",found
+How can I write asynchronous tests for a FastAPI app that lives in a package with main.py and a test_main.py beside it?,found
+"When my API sends a request out to another service that a different developer built, how can I document what that outside endpoint should accept and return?",found
+"Which framework that used Python type hints for validation and docs did the author find right before creating FastAPI, and why did they stop using it?",found
+"Before the async/await syntax existed in Python, what alternatives did developers use to handle concurrent or non-blocking work, and why were they considered harder to manage?",missed
+"When a FastAPI endpoint takes a request body typed with a Pydantic model, what happens automatically to the incoming JSON before my function receives it?",missed
+How can I group several HTTP request header values into one validated object in a FastAPI endpoint instead of declaring each header as a separate function argument?,missed
+"Why does the author recommend against using the Optional wrapper from the typing module in favor of an explicit union with None, even though both behave the same way?",found
+"In FastAPI, when a path operation function receives date or time-related parameters, can I directly do arithmetic on them such as adding a duration, or do I need to convert them first?",missed
+"How do I run an existing Flask application alongside my FastAPI routes in the same server, mounted under a sub-path?",missed
+"How can I make my FastAPI endpoint reject unexpected query string keys that aren't declared in the query parameter model, returning an error instead of ignoring them?",found
+How can I confirm that FastAPI generates separate schemas for my request body model and my response model in the generated API docs?,missed
+"In a small Python script that joins a first and last name, converts each to capitalized form, and joins them with a space, what does the output look like when run?",found
+"Does FastAPI's main application class build on another framework's class, so that anything available there also works in FastAPI?",found
+Where can I find named constants for HTTP status codes instead of typing raw integers like 200 or 403 in my FastAPI app?,found
+"How do I stop the framework from validating that the frontend build folder exists when my app object is created, because my frontend files get generated after that point?",found
+"How do I containerize a FastAPI app that lives in just one Python file with no package folder, and what does the Dockerfile need to copy and run?",found
+How can I push a continuous feed of events from a FastAPI endpoint to a browser using the text/event-stream format?,found
+How can I keep my application's configuration values in a separate Python file and import them into my main application file?,missed
+Why would annotating a FastAPI path operation function's return type as the output model cause editor or type-checker complaints when the function actually returns a different model class?,found
+"Are translations for the FastAPI docs still written by hand by community members, or is that done differently now?",found
+What is the common way to supply configuration like secret keys and database credentials to a Python web app so they stay outside the code?,found
+Why can't a Python web framework that uses a request-and-response parameter design automatically validate and document function parameters using standard type hints?,found
+How can I include event names or ids along with my data when streaming server-sent events from a FastAPI endpoint?,missed
+Where can I find a list of additional ASGI middleware options beyond the ones built into FastAPI?,found
+Can I use a GraphQL library together with regular REST-style routes in the same FastAPI app?,found
+"How can I document the endpoints that a third-party service must implement so that my API can send it requests, using FastAPI's automatic docs?",found
+Which interactive browser-based interfaces does FastAPI provide out of the box for exploring and testing an API's endpoints?,found
+How can I stop FastAPI from turning underscores in header parameter names into hyphens when using a Pydantic model for headers?,found
+"What's the difference between a stored, non-running package of files and settings versus the live instance that gets executed from it, in the context of Docker-style deployments?",found
