@@ -52,3 +52,52 @@ Rămânem fără stemming (varianta mai simplă).
 |---|---|
 | 1 | 0.548 (23/42) |
 | 2
+
+# Embeddings și căutare hibridă
+
+## Setup
+- Embeddings: all-MiniLM-L6-v2 (sentence-transformers, local), vectori normalizați,
+  similaritate cosinus (produs scalar)
+- Hibrid: RRF (Reciprocal Rank Fusion), scor = Σ 1/(60 + poziție),
+  primele 50 de rezultate din fiecare sistem
+- Același corpus (1183 de chunk-uri) și același set de evaluare (42 de întrebări)
+
+## Rezultate
+| | BM25 | Embeddings | Hibrid |
+|---|---|---|---|
+| recall@1 | 0.548 | 0.405 | 0.595 |
+| recall@5 | 0.738 | 0.643 | 0.786 |
+| recall@10 | 0.762 | 0.786 | 0.857 |
+| MRR | 0.621 | 0.531 | 0.681 |
+| nDCG@10 | 0.656 | 0.592 | 0.723 |
+
+## BM25 față de embeddings (top 10)
+| | Embeddings: nu găsește | Embeddings: găsește |
+|---|---|---|
+| BM25: nu găsește | 6 | 4 |
+| BM25: găsește | 3 | 29 |
+
+- La performanță, practic la egalitate: dezacorduri 3 față de 4.
+- Găsesc întrebări diferite: 7 întrebări găsite doar de unul dintre sisteme.
+- Plafonul teoretic al combinării: 29 + 3 + 4 = 36/42 = 0.857.
+
+## Observații
+- BM25 e mai bun sus în listă (recall@1, recall@5): documentația tehnică are
+  cuvinte exacte (Depends, Query) pe care BM25 le prinde bine.
+- Embeddings-urile prind mai mult la k mare: leagă sensuri fără cuvinte comune.
+- Posibile limite ale embeddings: model mic și general; bucățile lungi sunt
+  tăiate după ~256 de tokeni.
+- Hibridul atinge exact plafonul de 36/42 la recall@10 și e cel mai bun la
+  toate metricile.
+- 6 întrebări nu sunt găsite de niciun sistem.
+
+## De ce RRF și nu media armonică
+Media armonică a pozițiilor e RRF cu constanta 0. Cu 0, primul loc dintr-o
+singură listă domină; cu 60, contează mai mult acordul dintre sisteme.
+RRF folosește poziții, nu scoruri, pentru că scorurile BM25 și cosinusurile
+sunt pe scări diferite.
+
+## Semnificație (deschis)
+Hibrid față de BM25, recall@10: +4 întrebări. Chiar cu 4–0, testul semnului
+dă p = 0.125, deci nu e semnificativ. Testul pe „nimerit sau nu” pierde
+informație. Următorul pas: test de permutare pe perechi, pe valorile 1/poziție.

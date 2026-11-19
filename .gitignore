@@ -1,4 +1,5 @@
 .env
 .vscode
 data/
-eval/*_results.csv
+__pycache__/
+eval/*results*.csv
