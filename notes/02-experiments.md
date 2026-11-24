@@ -101,3 +101,34 @@ sunt pe scări diferite.
 Hibrid față de BM25, recall@10: +4 întrebări. Chiar cu 4–0, testul semnului
 dă p = 0.125, deci nu e semnificativ. Testul pe „nimerit sau nu” pierde
 informație. Următorul pas: test de permutare pe perechi, pe valorile 1/poziție.
+
+## Test de permutare pe perechi: hibrid față de BM25 (MRR)
+
+### Setup
+- Pentru fiecare întrebare: RR = 1/poziția bucății corecte (0 dacă nu e în top 10).
+- dᵢ = RR_hibrid − RR_bm25, pentru cele 42 de întrebări.
+- Statistica: media lui d (= diferența de MRR).
+- H0: sistemele sunt la fel de bune; în fiecare pereche, valorile pot fi
+  interschimbate, deci semnul lui dᵢ e aleator.
+- Simulare: 10 000 de rulări cu semne aleatoare (±1), seed 42.
+- p-value: proporția simulărilor cu |media| ≥ |diferența observată|.
+
+### Rezultat
+- Diferența observată: 0.060 (MRR 0.681 față de 0.621)
+- p = 0.134
+
+### Interpretare
+- Nesemnificativ la α = 0.05: într-o lume în care sistemele sunt egale,
+  o diferență cel puțin atât de mare apare din noroc în ~13% din cazuri.
+- Nu înseamnă că hibridul nu e mai bun, ci că n = 42 nu ajunge ca să o demonstrăm.
+- Testul folosește mai multă informație decât testul semnului: contează și
+  mărimea diferenței la fiecare întrebare, nu doar direcția.
+
+### Decizie
+Adoptăm hibridul: e mai bun la toate cele cinci metrici, nu e niciodată
+vizibil mai slab, iar costul e mic. Formulare corectă: „îmbunătățire
+consecventă, nesemnificativă statistic la n = 42”.
+
+### Următorul pas
+Interval de încredere bootstrap pentru diferența de MRR: între ce valori
+e plauzibil să fie diferența reală.
